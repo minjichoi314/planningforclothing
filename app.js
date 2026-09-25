@@ -1,0 +1,65 @@
+const CLOTHES=[['상의','👕'],['바지','👖'],['치마','👗'],['겉옷','🧥'],['신발','👟'],['모자','🧢'],['기타 의류','🧦']];
+const CAREERS=['의류 상품 기획자(MD)','자산관리자','환경 지도자','패션 디자이너','섬유 소재 연구원','의류 수선 전문가','세탁·관리 전문가','윤리적 소비 컨설턴트','중고 의류 큐레이터','스타일리스트'];
+const STEPS=[
+ {title:'필요성',missions:[
+  {title:'옷장 조사',q:['비슷한 옷을 이미 몇 벌 가지고 있나요?','가지고 있는 옷으로 해결할 수 없는 상황은 무엇인가요?','직접 확인한 옷장 상태를 어떤 근거로 기록했나요?']},
+  {title:'생활 속 필요',q:['어느 계절과 활동에서 입으려고 하나요?','학교 규정이나 생활 일정에 맞나요?','필요한 시기는 언제이며 그 이유는 무엇인가요?']},
+  {title:'필요 정도 선택',q:['지금 가진 옷으로 대신할 수 있나요?','앞으로 3개월 안에 입을 일이 있나요?','수선·빌리기·교환을 먼저 해볼 수 있나요?'],options:['꼭 필요함','있으면 유용함','지금은 필요하지 않음']}]},
+ {title:'예산',missions:[
+  {title:'가격 조사',q:['서로 다른 후보 상품 두 개의 가격은 얼마인가요?','판매처와 확인 날짜는 무엇인가요?','가격 차이가 나는 이유를 찾았나요?']},
+  {title:'총비용과 한도',q:['배송비와 수선비를 포함한 총액은 얼마인가요?','내가 쓸 수 있는 한도는 얼마인가요?','다른 필요한 지출을 고려했나요?']},
+  {title:'예산 범위 선택',q:['조사한 총액은 예산 안에 들어오나요?','가격이 달라지면 어떤 대안을 고를 건가요?','저축이나 다른 지출에 부담이 없나요?'],options:['예산 안에 듦','예산을 조금 넘음','예산을 많이 넘음']}]},
+ {title:'활용도',missions:[
+  {title:'착용 장면',q:['한 주에 어떤 날에 입을 수 있나요?','기존 옷 세 가지와 어떻게 조합하나요?','계절이나 학교생활 때문에 못 입는 때는 언제인가요?']},
+  {title:'1회 착용 비용',q:['예상 구매 총액은 얼마인가요?','선택한 착용 횟수로 나누면 1회당 얼마인가요?','다른 후보 또는 기존 옷과 비교하면 어떤가요?']},
+  {title:'연간 착용 횟수 선택',q:['한 달에 몇 번 입을 것 같나요?','입는 계절은 몇 개월인가요?','그 계산으로 1년에 몇 번이 되나요?'],options:['1~5회','6~15회','16~30회','31~60회','61회 이상']}]},
+ {title:'소재',missions:[
+  {title:'라벨 조사',q:['섬유 종류와 혼용률은 무엇인가요?','상품 페이지나 라벨의 출처는 어디인가요?','그 소재가 필요한 계절에 맞는 이유는 무엇인가요?']},
+  {title:'착용감과 내구성',q:['보온성·통기성·신축성은 어떤가요?','봉제 상태와 원단 두께를 확인했나요?','자료나 사용 후기를 어떻게 확인했나요?']},
+  {title:'소재 정보 확인 선택',q:['혼용률을 직접 확인했나요?','소재 특성을 신뢰할 자료가 있나요?','확인하지 못한 정보가 남아 있나요?'],options:['라벨과 출처 모두 확인','상품 설명만 확인','아직 확인하지 못함']}]},
+ {title:'관리 가능성',missions:[
+  {title:'세탁 표시',q:['물세탁·건조·다림질 표시는 무엇인가요?','직접 할 수 없는 관리 방법이 있나요?','세탁 정보를 어디서 확인했나요?']},
+  {title:'오래 입는 방법',q:['얼마나 자주 세탁해야 하나요?','보관·얼룩 제거·수선은 어떻게 하나요?','관리 시간과 비용을 감당할 수 있나요?']},
+  {title:'관리 난이도 선택',q:['집에 필요한 도구가 있나요?','내가 직접 관리할 수 있나요?','특별한 세탁 비용이 드나요?'],options:['혼자 관리 가능','도움이 있으면 가능','관리가 어려움']}]},
+ {title:'종합 미션',missions:[
+  {title:'최종 선택',q:['후보 두 개와 구매하지 않는 방법을 비교했나요?','필요성·예산·활용도·소재·관리를 모두 고려했나요?','최종적으로 무엇을 선택하고 왜 그렇게 결정했나요?']},
+  {title:'실행 계획',q:['언제 어떤 판매처 또는 대안으로 실천하나요?','마지막으로 확인할 가격과 정보는 무엇인가요?','오래 입기 위한 관리 계획은 무엇인가요?']},
+  {title:'현재 결론 선택',q:['지금 필요한 물건인가요?','예산과 관리가 가능한가요?','조사를 더 해야 할 부분이 있나요?'],options:['구매 또는 마련하기','기존 옷 활용·수선하기','결정 보류하고 더 조사하기']}]}
+];
+const KEY='closet-quest-v2';
+const blank=()=>({identity:'',clothing:'',customClothing:'',steps:STEPS.map(()=>({answers:['','',''],done:false})),bonus:'',career:CAREERS[0],feedback:'',reflection:'',revision:'',view:'start'});
+let state;try{state=Object.assign(blank(),JSON.parse(localStorage.getItem(KEY)||'{}'));if(!Array.isArray(state.steps)||state.steps.length!==6)state=blank()}catch{state=blank()}
+const app=document.getElementById('app');
+const safe=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const save=()=>localStorage.setItem(KEY,JSON.stringify(state));
+const garment=()=>CLOTHES.find(x=>x[0]===state.clothing)?.[1]||'👕';
+const garmentName=()=>state.clothing==='기타 의류'?(state.customClothing.trim()||'기타 의류'):state.clothing;
+const current=()=>{const i=state.steps.findIndex(s=>!s.done);return i<0?5:i};
+const allDone=()=>state.steps.every(s=>s.done);
+function button(label,act,style='primary',disabled=false){return '<button type="button" class="'+style+'" data-action="'+act+'"'+(disabled?' disabled':'')+'>'+label+'</button>'}
+function title(heading,sub){return '<div class="hero"><span class="tag">생활 속 의복 선택 탐험</span><h1>'+heading+'</h1><p>'+sub+'</p></div>'}
+function actions(items){return '<div class="actions">'+items.join('')+'</div><p class="error" id="message" role="alert"></p>'}
+function start(){return title('나의 옷장 <span class="lime">QUEST</span>','내가 마련하고 싶은 옷을 골라 탐험을 시작해요.')+
+ '<div class="card"><h2>탐험 준비</h2><label for="identity">학년·반·번호·이름 (한 칸에 입력)</label><input id="identity" data-field="identity" maxlength="70" placeholder="예: 2학년 3반 12번 김하늘" value="'+safe(state.identity)+'"><label for="clothing">마련하고 싶은 옷</label><select id="clothing" data-field="clothing"><option value="">옷을 선택하세요</option>'+CLOTHES.map(x=>'<option value="'+x[0]+'"'+(state.clothing===x[0]?' selected':'')+'>'+x[1]+' '+x[0]+'</option>').join('')+'</select>'+(state.clothing==='기타 의류'?'<label for="custom">어떤 옷인가요?</label><input id="custom" data-field="customClothing" maxlength="40" value="'+safe(state.customClothing)+'" placeholder="예: 교복 셔츠">':'')+'<p class="small">이름표와 답변은 이 브라우저에만 저장됩니다. 공용 기기에서는 사용 후 사이트 데이터를 삭제하세요.</p>'+actions([button('탐험 시작 →','begin')])+'</div>'}
+const positions=[[15,23],[50,23],[85,23],[85,77],[50,77],[15,77]];
+function board(){return title('나의 옷장 <span class="lime">QUEST</span>',''+safe(state.identity)+' · '+garment()+' '+safe(garmentName()))+
+ '<div class="board"><svg class="route" viewBox="0 0 1000 470" preserveAspectRatio="none" aria-hidden="true"><path d="M150 108 H850 Q955 108 955 235 Q955 362 850 362 H150" fill="none" stroke="#b5d889" stroke-width="15" stroke-linecap="round" stroke-dasharray="24 16"/></svg><div class="spaces">'+STEPS.map((s,i)=>{let open=i<=current()||state.steps[i].done;return '<button class="space '+(state.steps[i].done?'done ':'')+(i===current()?'current':'')+'" style="left:'+positions[i][0]+'%;top:'+positions[i][1]+'%" data-action="step-'+i+'"'+(open?'':' disabled')+'><span class="stepno">'+(i===5?'FINAL':'STEP '+(i+1))+'</span><span class="piece">'+(i===current()?garment():(state.steps[i].done?'✓':'●'))+'</span><strong>'+s.title+'</strong><span class="mark">'+(state.steps[i].done?'미션 완료':i===current()?'내 옷의 현재 위치':'다음에 이동')+'</span></button>'}).join('')+'</div></div><p class="board-note">'+garment()+' 옷이 미션을 마칠 때마다 다음 칸으로 이동해요.</p>'+actions([button('지속가능성 BONUS','bonus','secondary'),button('피드백 및 성찰 →','review','primary',!allDone()),button('처음 정보 수정','start','secondary')])}
+function mission(m,i,j){let a=state.steps[i].answers[j];return '<div class="mission"><h3><span class="number">'+(j+1)+'</span>'+m.title+'</h3><p>다음 질문을 생각하며 조사해 보세요.</p><ol class="questions">'+m.q.map(q=>'<li>'+safe(q)+'</li>').join('')+'</ol>'+(m.options?'<label for="answer-'+j+'">조사 결과에 가까운 답을 선택하세요</label><select id="answer-'+j+'" data-answer="'+i+'-'+j+'"><option value="">선택하세요</option>'+m.options.map(o=>'<option'+(a===o?' selected':'')+'>'+safe(o)+'</option>').join('')+'</select>':'<label for="answer-'+j+'">조사하고 알게 된 내용을 적으세요</label><textarea id="answer-'+j+'" data-answer="'+i+'-'+j+'" maxlength="1500" placeholder="조사 결과와 출처·확인 날짜를 함께 적어 주세요.">'+safe(a)+'</textarea>')+'</div>'}
+function step(i){let s=STEPS[i];return title((i===5?'FINAL':'STEP '+(i+1))+' <span class="lime">'+s.title+'</span>',garment()+' '+safe(garmentName())+'의 정보를 직접 조사해 보세요.')+s.missions.map((m,j)=>mission(m,i,j)).join('')+actions([button('미션 완료하고 이동 →','finish-'+i),button('탐험판 이동','board','secondary')])}
+function bonus(){return title('지속가능성 <span class="lime">BONUS</span>','선택 사항인 학습 확장 활동이에요.')+'<div class="mission"><h3>옷의 다음 여정</h3><ol class="questions"><li>이 옷은 어떻게 생산되고 이동했을까요?</li><li>더 오래 입기 위해 어떤 수선·관리 방법을 쓸 수 있을까요?</li><li>입지 않게 되면 어떻게 나누거나 순환시킬 수 있을까요?</li></ol><textarea data-field="bonus" maxlength="2000" placeholder="조사 자료와 실천할 행동을 적어 보세요.">'+safe(state.bonus)+'</textarea></div>'+actions([button('탐험판 이동','board','secondary')])}
+function review(){if(!allDone())return board();return title('피드백 <span class="lime">및 성찰</span>','의생활 분야 직업인의 관점으로 나의 의복 마련 계획을 점검해 보세요')+
+ '<div class="card"><label for="career">직업인 선택</label><select id="career" data-field="career">'+CAREERS.map(c=>'<option'+(state.career===c?' selected':'')+'>'+safe(c)+'</option>').join('')+'</select><p class="small">'+(window.CLOTHING_STATIC_MODE?'이 GitHub Pages 버전은 AI가 아닌 자동 점검을 제공합니다. 답변을 외부로 전송하지 않습니다.':'실제 AI 피드백을 요청합니다. 이름표는 전송하지 않고 미션 답변만 전송합니다.')+'</p>'+actions([button(window.CLOTHING_STATIC_MODE?'자동 점검 받기':'AI 피드백 받기','feedback')])+(state.feedback?'<h3>'+safe(state.career)+'의 '+(window.CLOTHING_STATIC_MODE?'자동 점검':'AI 피드백')+'</h3><div class="feedback">'+safe(state.feedback)+'</div>':'')+'</div>'+
+ (state.feedback?'<div class="mission"><h3>나의 선택 성찰</h3><ol class="questions"><li>피드백에서 동의하는 점은 무엇인가요?</li><li>다시 확인할 가격·소재·관리 정보는 무엇인가요?</li><li>내 의복 선택 기준은 어떻게 달라졌나요?</li></ol><textarea data-field="reflection" maxlength="2500">'+safe(state.reflection)+'</textarea></div><div class="mission"><h3>수정·보완한 최종 계획</h3><ol class="questions"><li>옷을 마련할지, 기존 옷을 활용할지 어떻게 결정했나요?</li><li>예산과 착용·관리 계획을 어떻게 바꾸었나요?</li><li>언제 어떤 행동을 할 예정인가요?</li></ol><textarea data-field="revision" maxlength="3000">'+safe(state.revision)+'</textarea></div>'+actions([button('PDF로 저장','pdf','primary',!state.reflection.trim()||!state.revision.trim()),button('탐험판 이동','board','secondary')]):actions([button('탐험판 이동','board','secondary')]))}
+function guidedFeedback(){const focus={'의류 상품 기획자(MD)':'후보 상품의 가격·소재·용도를 나란히 비교하세요.','자산관리자':'총비용과 1회 착용 비용을 예산과 비교하세요.','환경 지도자':'새 옷 이외에 수선·교환·중고 선택을 비교하세요.','패션 디자이너':'기존 옷과 어울리는 조합을 시험하세요.','섬유 소재 연구원':'섬유 혼용률의 출처와 계절 적합성을 확인하세요.','의류 수선 전문가':'수선으로 필요한 기능을 채울 수 있는지 확인하세요.','세탁·관리 전문가':'세탁 라벨과 실제 관리 시간을 확인하세요.','윤리적 소비 컨설턴트':'인증·생산 정보의 근거를 확인하세요.','중고 의류 큐레이터':'중고 옷의 상태와 실측을 확인하세요.','스타일리스트':'착용 장면과 기존 옷의 조합을 확인하세요.'};return '자동 점검 (AI 작성 아님)\n\n잘한 점: '+garmentName()+'에 대해 여섯 단계를 모두 조사했습니다.\n\n더 살펴볼 점: '+focus[state.career]+'\n출처와 확인 날짜가 빠진 답변은 보완해 보세요.\n\n수정 제안: 예산·예상 착용 횟수·관리 방법을 다시 비교하고, 구매하지 않는 대안까지 포함해 최종 계획을 적어 보세요.'}
+function report(){return '<article class="report"><h1>나의 옷장 QUEST · 활동 결과</h1><p><strong>학번·이름:</strong> '+safe(state.identity)+'</p><p><strong>마련할 옷:</strong> '+safe(garmentName())+'</p>'+STEPS.map((s,i)=>'<section><h2>'+(i===5?'FINAL':'STEP '+(i+1))+' '+s.title+'</h2>'+s.missions.map((m,j)=>'<p><strong>'+m.title+'</strong><br>'+safe(state.steps[i].answers[j])+'</p>').join('')+'</section>').join('')+'<section><h2>지속가능성 BONUS</h2><p>'+safe(state.bonus)+'</p></section><section><h2>피드백 및 성찰</h2><p><strong>'+safe(state.career)+'</strong></p><p>'+safe(state.feedback)+'</p><h3>나의 성찰</h3><p>'+safe(state.reflection)+'</p><h3>수정·보완 계획</h3><p>'+safe(state.revision)+'</p></section></article>'}
+function render(){let view=state.view;app.innerHTML='<div class="screen">'+(view==='start'?start():view==='board'?board():view==='bonus'?bonus():view==='review'?review():view.startsWith('step-')?step(Number(view.slice(5))):start())+'</div>'+report()}
+app.addEventListener('input',e=>{let f=e.target.dataset.field;if(f){state[f]=e.target.value;save()}let a=e.target.dataset.answer;if(a){let [i,j]=a.split('-').map(Number);state.steps[i].answers[j]=e.target.value;state.steps[i].done=false;state.feedback='';state.reflection='';state.revision='';save()}if(f==='reflection'||f==='revision'){let b=app.querySelector('[data-action="pdf"]');if(b)b.disabled=!state.reflection.trim()||!state.revision.trim()}});
+app.addEventListener('change',e=>{let f=e.target.dataset.field;if(f){state[f]=e.target.value;if(f==='career'){state.feedback='';state.reflection='';state.revision=''}save();if(f==='clothing'||f==='career')render()}let a=e.target.dataset.answer;if(a){let [i,j]=a.split('-').map(Number);state.steps[i].answers[j]=e.target.value;state.steps[i].done=false;state.feedback='';save()}});
+app.addEventListener('click',async e=>{let a=e.target.closest('[data-action]')?.dataset.action;if(!a)return;let m=app.querySelector('#message');
+ if(a==='begin'){if(!/^\s*\d{1,2}\s*학년\s*\d{1,2}\s*반\s*\d{1,3}\s*번\s*\S+/.test(state.identity)||!state.clothing||(state.clothing==='기타 의류'&&!state.customClothing.trim())){m.textContent='한 칸에 “2학년 3반 12번 김하늘”처럼 입력하고 옷을 선택해 주세요.';return}state.view='board'}
+ else if(a.startsWith('finish-')){let i=Number(a.slice(7)),v=state.steps[i].answers;if(!v[0].trim()||v[0].trim().length<10||!v[1].trim()||v[1].trim().length<10||!v[2]){m.textContent='두 조사 내용을 각각 10자 이상 쓰고 선택형 답도 골라 주세요.';return}state.steps[i].done=true;state.view='board'}
+ else if(a==='feedback'){let b=e.target;b.disabled=true;m.textContent='피드백을 준비하고 있습니다…';try{if(window.CLOTHING_STATIC_MODE){state.feedback=guidedFeedback()}else{let r=await fetch('/api/feedback',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({career:state.career,clothing:garmentName(),steps:state.steps})});let d=await r.json();if(!r.ok)throw Error(d.error||'피드백 요청 실패');state.feedback=d.feedback}state.reflection='';state.revision='';save();render()}catch(err){m.textContent=err.message;b.disabled=false}return}
+ else if(a==='pdf'){if(allDone()&&state.feedback&&state.reflection.trim()&&state.revision.trim())window.print();return}
+ else state.view=a;save();render();window.scrollTo(0,0)
+});
+render();

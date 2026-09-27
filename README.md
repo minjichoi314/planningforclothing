@@ -28,3 +28,7 @@ GitHub Pages의 자동 점검은 실제 AI 피드백이 아닙니다. 학생에�
 ## GitHub Pages의 피드백 오류
 
 GitHub Pages 주소에서는 앱이 자동으로 정적 사이트임을 감지하여 AI 서버 호출 대신 규칙 기반 자동 점검을 표시합니다. 화면에 Unexpected token 같은 오류가 보이면 저장소 맨 위의 app.js를 최신 파일로 교체하고 페이지를 새로고침하세요. 실제 AI 피드백을 받으려면 Node 서버와 서버 측 API 키 설정이 필요합니다.
+
+## Google 스프레드시트로 제출
+
+마지막 화면에 PDF 저장과 스프레드시트 제출을 함께 제공합니다. 대상 Google 시트에 제출을 연결하려면 google-apps-script/설정방법.md의 순서대로 Code.gs를 배포한 뒤, index.html의 window.CLOTHING_SHEET_WEB_APP_URL에 웹 앱 주소를 입력하세요. 설정 전에는 제출 버튼이 비활성화됩니다. 제출 내용은 시트의 학생 제출 탭에 저장되며, 같은 학생이 다시 제출하면 기존 행이 갱신됩니다. PDF 저장은 연결 여부와 상관없이 사용할 수 있습니다.
